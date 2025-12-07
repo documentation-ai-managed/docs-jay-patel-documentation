@@ -1,0 +1,79 @@
+---
+title: Introduction
+description: Overview of HeyFounder.in and its core capabilities
+---
+
+HeyFounder.in is a comprehensive platform that connects Indian founders and makers with potential investors and buyers. Discover featured startups across categories like SaaS, E-commerce, and Mobile App, filtered by cities including London, Mumbai, and Delhi. Our platform serves as a vital marketplace where innovative businesses can gain visibility and attract the right opportunities.
+
+<Columns cols={3}>
+  <Card title="Browse Startups" icon="search" href="#">
+    Explore a curated list of startups across various industries and locations.
+  </Card>
+  <Card title="Filter by Category" icon="filter" href="#">
+    Find businesses in SaaS, E-commerce, Mobile App, and more.
+  </Card>
+  <Card title="Location-Based Search" icon="map-pin" href="#">
+    Discover startups in cities like Mumbai, Delhi, and London.
+  </Card>
+</Columns>
+
+## Key Features
+
+<Tabs>
+  <Tab title="For Founders" icon="users">
+    Showcase your startup to potential investors and buyers. Get discovered by the right audience.
+    <Steps>
+      <Step title="Register" icon="user-plus">
+        Create your startup profile with detailed information.
+      </Step>
+      <Step title="List Your Business" icon="plus-circle">
+        Add your startup to our platform with category and location details.
+      </Step>
+      <Step title="Connect" icon="link">
+        Engage with interested investors and buyers directly.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="For Investors" icon="trending-up">
+    Browse and invest in promising startups. Filter by category and location to find the perfect match.
+    <Expandable title="Advanced Filtering Options" default-open="false">
+      Use our advanced filters to narrow down startups by revenue, team size, and funding stage.
+    </Expandable>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">Get started by creating your account and exploring featured startups today.</Callout>
+
+## Why Choose HeyFounder.in?
+
+Our platform stands out with its focus on Indian entrepreneurship, providing a tailored space for startups to thrive. Whether you're a founder looking to grow or an investor seeking opportunities, HeyFounder.in offers the tools and visibility you need.
+
+<CodeGroup tabs="JavaScript,Python">
+  ````javascript
+  // Example: Fetch featured startups
+  const response = await fetch('/api/startups/featured');
+  const startups = await response.json();
+  console.log(startups);
+  ````
+  ````python
+  import requests
+  response = requests.get('/api/startups/featured')
+  startups = response.json()
+  print(startups)
+  ````
+</CodeGroup>
+
+<ExpandableGroup>
+  <Expandable title="How do I list my startup?" default-open="false">
+    Navigate to your dashboard, click 'Add Startup', and fill in the required details including category and location.
+  </Expandable>
+  <Expandable title="What categories are available?" default-open="false">
+    We support categories like SaaS, E-commerce, Mobile App, FinTech, and HealthTech, among others.
+  </Expandable>
+</ExpandableGroup>
+
+## Getting Started
+
+Begin your journey by signing up for an account. Once registered, you can explore listings, connect with founders, or list your own startup. Our user-friendly interface makes navigation intuitive, with powerful search and filter capabilities to help you find exactly what you're looking for.
+
+The platform supports over 500 active startups, with new listings added daily. Join our community of innovators and discover the next big opportunity in Indian entrepreneurship.

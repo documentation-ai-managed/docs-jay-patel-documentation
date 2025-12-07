@@ -1,0 +1,124 @@
+---
+title: Getting Started
+description: Quick guide to setting up and using HeyFounder.in
+---
+
+## Account Setup
+
+Creating an account on HeyFounder.in is straightforward and takes just a few minutes. Whether you're a founder looking to list your startup or an investor seeking opportunities, our registration process ensures you get started quickly.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit the homepage and click 'Sign Up'. Provide your email, name, and choose your role (Founder or Investor).
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification email and click the link to activate your account.
+  </Step>
+  <Step title="Complete Profile" icon="settings">
+    Add profile details, including location and interests, to personalize your experience.
+  </Step>
+  <Step title="Explore" icon="search">
+    Start browsing startups or list your own business.
+  </Step>
+</Steps>
+
+<Callout kind="info">Ensure your email is valid for account verification and notifications.</Callout>
+
+## Browsing Startups
+
+Our platform offers powerful search and filtering tools to help you discover relevant startups.
+
+<Tabs>
+  <Tab title="By Category" icon="tag">
+    Filter startups by categories such as SaaS, E-commerce, and Mobile App.
+    <Expandable title="Popular Categories" default-open="true">
+      | Category | Description |
+      |----------|-------------|
+      | SaaS | Software as a Service platforms |
+      | E-commerce | Online retail and marketplace solutions |
+      | Mobile App | iOS and Android applications |
+    </Expandable>
+  </Tab>
+  <Tab title="By Location" icon="map-pin">
+    Find startups in specific cities like Mumbai, Delhi, and London.
+    <Expandable title="Supported Cities" default-open="false">
+      Our platform currently supports major cities including Mumbai, Delhi, London, Bangalore, and Pune.
+    </Expandable>
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="JavaScript,cURL">
+  ````javascript
+  // Fetch startups by category
+  const category = 'SaaS';
+  const response = await fetch(`/api/startups?category=${category}`);
+  const data = await response.json();
+  console.log(data);
+  ````
+  ````bash
+  curl -X GET "https://api.heyfounder.in/startups?category=SaaS"
+  ````
+</CodeGroup>
+
+## Listing Your Startup
+
+As a founder, listing your startup is easy and increases your visibility to potential investors.
+
+<Steps>
+  <Step title="Access Dashboard" icon="layout-dashboard">
+    Log in and navigate to your dashboard.
+  </Step>
+  <Step title="Add Startup" icon="plus-circle">
+    Click 'Add Startup' and fill in details like name, description, category, and location.
+  </Step>
+  <Step title="Upload Assets" icon="image">
+    Add logo, screenshots, and any relevant documents.
+  </Step>
+  <Step title="Publish" icon="send">
+    Review and publish your listing.
+  </Step>
+</Steps>
+
+<Callout kind="success">Your startup will appear in relevant searches and featured lists once published.</Callout>
+
+<ExpandableGroup>
+  <Expandable title="What information is required to list a startup?" default-open="false">
+    You'll need to provide the startup name, description, category, location, team size, and current funding stage.
+  </Expandable>
+  <Expandable title="Can I edit my listing after publishing?" default-open="false">
+    Yes, you can edit your listing at any time through your dashboard.
+  </Expandable>
+</ExpandableGroup>
+
+## Connecting with Others
+
+HeyFounder.in facilitates connections between founders and investors through direct messaging and contact forms.
+
+<Tabs>
+  <Tab title="For Founders" icon="message-square">
+    Respond to investor inquiries and share more details about your business.
+  </Tab>
+  <Tab title="For Investors" icon="users">
+    Reach out to founders with your interest and investment proposals.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="Python,JavaScript">
+  ````python
+  # Send a connection request
+  import requests
+  data = {'startup_id': 123, 'message': 'Interested in investing'}
+  response = requests.post('/api/connections', json=data)
+  ````
+  ````javascript
+  // Send connection request
+  const data = { startup_id: 123, message: 'Interested in investing' };
+  const response = await fetch('/api/connections', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  ````
+</CodeGroup>
+
+<Callout kind="alert">Always verify connections and conduct due diligence before sharing sensitive information.</Callout>

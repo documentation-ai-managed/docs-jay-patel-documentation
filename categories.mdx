@@ -1,0 +1,101 @@
+---
+title: Categories
+description: Explore startup categories available on HeyFounder.in
+---
+
+## Overview of Categories
+
+HeyFounder.in organizes startups into various categories to help users discover businesses that match their interests. Whether you're looking for SaaS solutions, e-commerce platforms, or mobile apps, our categorization system makes it easy to find relevant opportunities.
+
+<Columns cols={3}>
+  <Card title="SaaS" icon="cloud" href="#saas">
+    Software as a Service platforms for businesses.
+  </Card>
+  <Card title="E-commerce" icon="shopping-cart" href="#ecommerce">
+    Online retail and marketplace solutions.
+  </Card>
+  <Card title="Mobile App" icon="smartphone" href="#mobile">
+    iOS and Android applications.
+  </Card>
+</Columns>
+
+## Detailed Category Breakdown
+
+<Tabs>
+  <Tab title="SaaS" icon="cloud">
+    SaaS startups offer subscription-based software solutions. These businesses typically provide tools for productivity, CRM, project management, and more.
+    <Expandable title="Popular SaaS Examples" default-open="true">
+      | Startup | Description |
+      |---------|-------------|
+      | ProjectManager | Task management tool |
+      | CRMPro | Customer relationship management |
+      | AnalyticsPlus | Business analytics platform |
+    </Expandable>
+    <CodeGroup tabs="JavaScript,Python">
+      ````javascript
+      // Filter startups by SaaS category
+      const startups = await fetch('/api/startups?category=SaaS');
+      const data = await startups.json();
+      console.log(data);
+      ````
+      ````python
+      import requests
+      response = requests.get('/api/startups?category=SaaS')
+      print(response.json())
+      ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="E-commerce" icon="shopping-cart">
+    E-commerce startups focus on online retail, marketplaces, and digital commerce solutions.
+    <Expandable title="Key E-commerce Features" default-open="false">
+      Look for startups with features like inventory management, payment processing, and customer analytics.
+    </Expandable>
+  </Tab>
+  <Tab title="Mobile App" icon="smartphone">
+    Mobile app startups develop applications for iOS and Android platforms, covering gaming, utilities, and business tools.
+    <Expandable title="App Development Insights" default-open="false">
+      Successful mobile apps often have strong user engagement metrics and cross-platform compatibility.
+    </Expandable>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">Use category filters to narrow down your search and find startups that align with your investment goals.</Callout>
+
+## Emerging Categories
+
+Beyond the main categories, HeyFounder.in also features startups in emerging fields like FinTech, HealthTech, and EdTech.
+
+<Steps>
+  <Step title="Explore FinTech" icon="credit-card">
+    Discover startups revolutionizing financial services with innovative payment solutions and blockchain technology.
+  </Step>
+  <Step title="Check HealthTech" icon="heart">
+    Find businesses developing healthcare apps, telemedicine platforms, and medical devices.
+  </Step>
+  <Step title="Browse EdTech" icon="book-open">
+    Explore educational technology startups offering online learning platforms and tools.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="cURL,JavaScript">
+  ````bash
+  # Get startups in FinTech category
+  curl -X GET "https://api.heyfounder.in/startups?category=FinTech"
+  ````
+  ````javascript
+  // Fetch FinTech startups
+  const response = await fetch('/api/startups?category=FinTech');
+  const fintechStartups = await response.json();
+  ````
+</CodeGroup>
+
+<ExpandableGroup>
+  <Expandable title="How are categories determined?" default-open="false">
+    Categories are assigned based on the primary business focus and services offered by the startup.
+  </Expandable>
+  <Expandable title="Can startups belong to multiple categories?" default-open="false">
+    While most startups fit into one primary category, some may be tagged in multiple related areas.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="info">New categories are added as the startup ecosystem evolves, ensuring comprehensive coverage.</Callout>

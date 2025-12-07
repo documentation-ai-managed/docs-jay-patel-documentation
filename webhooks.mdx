@@ -1,0 +1,138 @@
+---
+title: Webhooks
+description: Configure and use webhooks for real-time notifications on HeyFounder.in
+---
+
+## Introduction to Webhooks
+
+Webhooks on HeyFounder.in allow you to receive real-time notifications about events such as new startup listings, investment inquiries, and profile updates. This feature enables automated integrations and keeps your systems up-to-date with the latest platform activity.
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Log in to your account and navigate to the settings page.
+  </Step>
+  <Step title="Configure Webhooks" icon="link">
+    Go to the 'Webhooks' section and add a new webhook endpoint.
+  </Step>
+  <Step title="Select Events" icon="bell">
+    Choose the events you want to receive notifications for.
+  </Step>
+  <Step title="Test and Save" icon="check-circle">
+    Test your webhook URL and save the configuration.
+  </Step>
+</Steps>
+
+<Callout kind="info">Ensure your webhook endpoint is publicly accessible and can handle POST requests.</Callout>
+
+## Supported Events
+
+HeyFounder.in supports various webhook events to cover different aspects of platform activity.
+
+<Tabs>
+  <Tab title="Startup Events" icon="building">
+    Receive notifications for new listings, updates, and status changes.
+    <Expandable title="Event Types" default-open="true">
+      | Event | Description |
+      |-------|-------------|
+      | startup.created | New startup listed |
+      | startup.updated | Startup information modified |
+      | startup.featured | Startup marked as featured |
+    </Expandable>
+  </Tab>
+  <Tab title="Investment Events" icon="dollar-sign">
+    Get notified about investment inquiries and connections.
+    <Expandable title="Investment Notifications" default-open="false">
+      Events include inquiry.received and connection.established.
+    </Expandable>
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="JavaScript,Python">
+  ````javascript
+  // Example webhook payload for new startup
+  const payload = {
+    event: 'startup.created',
+    data: {
+      id: 123,
+      name: 'TechStartup',
+      category: 'SaaS',
+      location: 'Mumbai'
+    }
+  };
+  ````
+  ````python
+  # Webhook payload example
+  payload = {
+    'event': 'startup.created',
+    'data': {
+      'id': 123,
+      'name': 'TechStartup',
+      'category': 'SaaS',
+      'location': 'Mumbai'
+    }
+  }
+  ````
+</CodeGroup>
+
+## Security and Best Practices
+
+Webhook security is crucial to prevent unauthorized access and ensure data integrity.
+
+<Steps>
+  <Step title="Use HTTPS" icon="lock">
+    Always configure webhook URLs with HTTPS for encrypted communication.
+  </Step>
+  <Step title="Verify Signatures" icon="shield">
+    Implement signature verification using the provided secret key.
+  </Step>
+  <Step title="Handle Failures" icon="alert-triangle">
+    Implement retry logic and error handling for failed deliveries.
+  </Step>
+</Steps>
+
+<Callout kind="danger">Never expose sensitive information in webhook payloads and always validate incoming requests.</Callout>
+
+<ExpandableGroup>
+  <Expandable title="How do I verify webhook signatures?" default-open="false">
+    Use the secret key from your webhook settings to compute and compare HMAC signatures.
+  </Expandable>
+  <Expandable title="What happens if my webhook fails?" default-open="false">
+    HeyFounder.in will retry failed webhooks up to 3 times with exponential backoff.
+  </Expandable>
+</ExpandableGroup>
+
+## Testing Webhooks
+
+Before going live, test your webhook endpoints to ensure they handle payloads correctly.
+
+<Tabs>
+  <Tab title="Manual Testing" icon="play">
+    Use the test button in your webhook settings to send sample events.
+  </Tab>
+  <Tab title="Webhook Logs" icon="file-text">
+    Review delivery logs to troubleshoot any issues.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="Node.js,Python">
+  ````javascript
+  // Node.js webhook handler example
+  const express = require('express');
+  const app = express();
+  app.post('/webhook', (req, res) => {
+    console.log('Received webhook:', req.body);
+    res.status(200).send('OK');
+  });
+  ````
+  ````python
+  from flask import Flask, request
+  app = Flask(__name__)
+  @app.route('/webhook', methods=['POST'])
+  def handle_webhook():
+    data = request.json
+    print('Received webhook:', data)
+    return 'OK', 200
+  ````
+</CodeGroup>
+
+<Callout kind="success">Proper webhook implementation ensures seamless integration with your existing systems.</Callout>
